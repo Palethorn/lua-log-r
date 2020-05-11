@@ -2,7 +2,7 @@ package="lua-log-r"
 version="1.0.0-0"
 source = {
     url = "git://github.com/Palethorn/lua-log-r.git",
-    tag = "1.0.0"
+    tag = "v1.0.0"
 }
 description = {
    summary = "Pure lua library for writing logs",
