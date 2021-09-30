@@ -10,12 +10,11 @@ setmetatable(FileAppender, {
 
 function FileAppender:new(log_file)
     local self = setmetatable({}, FileAppender)
+    assert(nil ~= log_file, 'Log filename not provided')
+    assert('string' == type(log_file), 'log_file argument is not a string')
     self.file = io.open(log_file, "a")
-
-    if self.file then
-        self.file:setvbuf('line')
-    end
-
+    assert(self.file ~= nil and self.file.setvbuf ~= nil, 'Unable to open log file ' .. log_file)
+    self.file:setvbuf('line')
     return self
 end
 
